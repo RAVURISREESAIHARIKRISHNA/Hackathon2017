@@ -39,7 +39,8 @@ public class Storer extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
+        try {RequestDispatcher dispatch = request.getRequestDispatcher("option.html");
+            dispatch.forward(request, response);
             Class.forName("oracle.jdbc.OracleDriver");
             Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "md", "md");
             System.out.println("Connected");
@@ -49,14 +50,14 @@ public class Storer extends HttpServlet {
             ps.setString(2, formatter.format(new Date()));
             ps.execute();
             System.out.println("Success");
-            RequestDispatcher dispatch = request.getRequestDispatcher("option.html");
+            RequestDispatcher dispatch1 = request.getRequestDispatcher("option.html");
             dispatch.forward(request, response);
 
         } catch (Exception e) {
 
             //Errror Page
-//            RequestDispatcher dispatch = request.getRequestDispatcher("option.html");
-//        dispatch.forward(request,response);
+            RequestDispatcher dispatch = request.getRequestDispatcher("error.html");
+        dispatch.forward(request,response);
         }
     }
 

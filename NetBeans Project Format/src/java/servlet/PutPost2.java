@@ -57,8 +57,8 @@ public class PutPost2 extends HttpServlet {
             
             System.out.println("Exception Caught");
             //e.printStackTrace();
-//            RequestDispatcher dispatch = req.getRequestDispatcher("option.html");
-//        dispatch.forward(req,res);
+            RequestDispatcher dispatch = req.getRequestDispatcher("error.html");
+        dispatch.forward(req,res);
             
         }
     }

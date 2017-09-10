@@ -41,22 +41,35 @@ public class PostFeed extends HttpServlet {
             PreparedStatement ps = con.prepareStatement("select description,reply from posts");
             ResultSet rs = ps.executeQuery();
             PrintWriter pw = res.getWriter();
-            pw.print("<html><head></head><body>");
+            pw.print("<html><head></head><body style=\"background-color:light yellow;\">");
             while (rs.next()) {
-                pw.println("<b>");
+                pw.println("<form action=\"/Hackathon1/Storer\" method=\"POST\"");
+               pw.println("<input type=\"text\" type=\"hidden\" value=\"1\" name=\"hid\"");
+                pw.println("<div style=\"margin:0 auto;width:800px;border:2px solid red;\">");
+                pw.println("<h3 style=\"margin:0 auto;width:200px;\"></h3>");
+                pw.println("<div style=\"margin:0 auto;width:700px;border:2px solid blue;\">");
+                pw.println("<br><span style=\"width:300px;border:2px solid red;display:inline-block;\"");
+                
                 pw.println(rs.getString("description"));
-                pw.println("<br><input type=\"button\" value=\"Upvote\"");
-                pw.println("<br><input type=\"button\" value=\"Downvote\"");
-                pw.println("</b>");
+                pw.println("</span><input value=\"Upvote\" <br=\"\" type=\"button\"><input value=\"Downvote\"<=\"\" b=\"\" type=\"button\">");
+                pw.println("<span style=\"width:100px;display:inline-block;border;2px solid green;\">");
                 pw.println(rs.getString("reply"));
+                pw.println("</span>");
+                pw.println("<div style=\"background-color:green;\"");
+                pw.println("<input type=\"submit\" value=\"Upvote\"");
+                pw.println("<input type=\"submit\" value=\"DownVote\"");
+                pw.println("</div>");
+                pw.println("<hr>");
+                pw.println("Please press Back after Voting");
+                pw.println("</form>");
             }
             pw.println("</body><html>");
             pw.close();
         } catch (Exception e) {
             System.out.println("Exception Caught");
             e.printStackTrace();
-//            RequestDispatcher dispatch = req.getRequestDispatcher("option.html");
-//        dispatch.forward(req,res);
+            RequestDispatcher dispatch = req.getRequestDispatcher("eror.html");
+        dispatch.forward(req,res);
         }
     }
 }
