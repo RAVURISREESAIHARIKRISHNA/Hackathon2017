@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -53,8 +54,12 @@ public class PutPost2 extends HttpServlet {
             System.out.println("Success");
 
         } catch (Exception e) {
+            
             System.out.println("Exception Caught");
-            e.printStackTrace();
+            //e.printStackTrace();
+//            RequestDispatcher dispatch = req.getRequestDispatcher("option.html");
+//        dispatch.forward(req,res);
+            
         }
     }
 }

@@ -74,6 +74,8 @@ public class PutPost extends HttpServlet {
         } catch (Exception e) {
             System.out.println("Exception Caught");
             e.printStackTrace();
+//            RequestDispatcher dispatch = req.getRequestDispatcher("option.html");
+//        dispatch.forward(req,res);
         }
     }
 }
