@@ -66,7 +66,7 @@ public class PutPost extends HttpServlet {
             ps.setInt(9, 0);
             ps.setString(10, req.getParameter("district"));
             ps.setString(11, req.getParameter("mandal"));
-            Object o = ps.executeUpdate();
+            int o = ps.executeUpdate();
             System.out.println("Success");
             RequestDispatcher dispatch = req.getRequestDispatcher("option.html");
             dispatch.forward(req, res);
@@ -74,8 +74,8 @@ public class PutPost extends HttpServlet {
         } catch (Exception e) {
             System.out.println("Exception Caught");
             e.printStackTrace();
-//            RequestDispatcher dispatch = req.getRequestDispatcher("option.html");
-//        dispatch.forward(req,res);
+            RequestDispatcher dispatch = req.getRequestDispatcher("error.html");
+        dispatch.forward(req,res);
         }
     }
 }

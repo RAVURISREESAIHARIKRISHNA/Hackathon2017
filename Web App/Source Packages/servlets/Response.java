@@ -40,7 +40,7 @@ public class Response extends HttpServlet {
             ResultSet rs = ps.executeQuery();
             PrintWriter pw = res.getWriter();
             res.setContentType("text/html");
-            pw.println("<html><head></head><body>");
+            pw.println("<html><head></head><body style=\"background-color:light yellow;\">");
             while (rs.next()) {
                 PreparedStatement p = con.prepareStatement("select description from posts where post_id = ?");
                 p.setInt(1,Integer.parseInt(rs.getString("pid")));
@@ -54,8 +54,8 @@ public class Response extends HttpServlet {
             pw.close();
         } catch (Exception e) {
             //Error Page
-//            RequestDispatcher dispatch = req.getRequestDispatcher("option.html");
-//        dispatch.forward(req,res);
+            RequestDispatcher dispatch = req.getRequestDispatcher("error.html");
+        dispatch.forward(req,res);
         }
     }
 }

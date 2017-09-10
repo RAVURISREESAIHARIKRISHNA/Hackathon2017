@@ -55,9 +55,10 @@ public class GovtAuth extends HttpServlet {
 
         } catch (Exception e) {
             //ERROR Page
-
+ RequestDispatcher dispatch = req.getRequestDispatcher("error.html");
+        dispatch.forward(req,res);
             System.out.println("Exception GovtAuth");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 }
