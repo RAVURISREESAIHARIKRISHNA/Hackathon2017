@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-    </head>
-    <form action="/Hackathon/PutPost" method="POST">
-        <!--<input type="text" name="issue">-->
-        <input type="text" name="title">
-        <input type="text" name="dept">
-        <input type="text" name="exp">
-        <input type="text" name="district">
-        <input type="text" name="mandal">
-        <input type="submit">
+    <style>
+        body {
+            background-color: lightyellow;
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        div {
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+    </style>
+
+    <body>
 
 
+        <img src="http://4.bp.blogspot.com/-YGscwm1sW2c/Us-DEVIGAhI/AAAAAAAAHck/M6oX83qRY9M/s1600/rajmudra.jpg" alt="Government logo" style="width:50px;height:110px;">
 
-    </form>
+    </body>
+
+    <body>
+
+        
+<h3>Issue Form</h3>
+
+        <div>
+            <form action="/Hackathon1/PutPost" method ="POST">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Title...">
+                <label for="Department">Department</label>
+                <select id="Department" name="dept">
+                    <option value="Revenue">Revenue</option>
+                    <option value="Medical">Medical</option>
+                    <option value="Panchayat">Panchayat</option>
+                    <option value="Tribal Welfare">Tribal Welfare</option>
+                    <option value="Home Department">Home Department</option>
+                </select>
+
+                <label for="pfeed">Post feed</label>
+                <input type="text" id="pfeed" name="exp" placeholder="Your Explanation...">
+
+                <label for="District">District</label>
+                <select id="district" name="district">
+                    <option value="Krishna">Krishna</option>
+                    <option value="Guntur">Guntur</option>
+                    <option value="Godavari">Godavari</option>
+                </select>
+                <label for="Mandal">Mandal</label>
+                <select id="Mandal" name="mandal">
+                    <option value="Challapalli">Challapalli</option>
+                    <option value="Gudiwada">Gudiwada</option>
+                    <option value="Bhattiprolu">Bhattiprolu</option>
+                </select>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    </body>
 
 </html>
